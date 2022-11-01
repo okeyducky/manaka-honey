@@ -1,3 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-gradient-to-b from-amber-50 to-white;
+	}
+	h1,
+	h2,
+	h3 {
+		@apply text-secondary font-primary;
+	}
+
+	h4,
+	h5,
+	h6,
+	p,
+	li,
+	a {
+		@apply text-secondary font-body;
+	}
+
+	h1 {
+		@apply text-6xl leading-tight mb-4 font-semibold;
+	}
+
+	h2 {
+		@apply text-4xl mb-3 font-semibold;
+	}
+
+	h3 {
+		@apply text-2xl mb-3 font-semibold;
+	}
+
+	h4 {
+		@apply text-xl mb-2;
+	}
+
+	h5 {
+		@apply text-sm mb-3;
+	}
+
+	p {
+		@apply text-base mb-3;
+	}
+
+	section {
+		@apply overflow-hidden;
+	}
+}
+
+@layer components {
+	.container {
+		@apply max-w-screen-2xl mx-auto px-[50px] pt-[30px] sm:px-[10%] sm:py-[75px];
+	}
+
+	.link {
+		@apply relative cursor-pointer text-amber-500 before:absolute before:inset-x-0 before:-bottom-1.5 before:h-0.5 before:origin-left before:scale-x-0 before:transform before:rounded-bl before:bg-amber-500 before:transition-all before:duration-200 hover:before:scale-x-100;
+	}
+
+	.image-container {
+		@apply w-full;
+	}
+
+	.image-container > span {
+		@apply !static;
+	}
+
+	.image {
+		@apply object-contain w-full !relative !h-auto;
+	}
+
+	.navbar {
+		@apply max-w-screen-2xl m-auto px-[15px] sm:px-[10%] py-3 w-full flex items-center justify-between;
+	}
+
+	.nav-links {
+		@apply hidden flex-1 items-center justify-center space-x-8 md:flex;
+	}
+
+	.nav-links-mobile-container {
+		@apply w-full bg-white absolute top-16 right-0 transition-all duration-1000 overflow-hidden;
+	}
+
+	.nav-links-mobile {
+		@apply p-6 w-full flex items-center flex-col;
+	}
+
+	.nav-icon {
+		@apply h-6 w-6 cursor-pointer transition hover:opacity-75 stroke-secondary;
+	}
+
+	.count {
+		@apply absolute -right-1 -top-1 z-50 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-500 text-[10px] text-white;
+	}
+
+	.title {
+		@apply bg-primary-gradient bg-clip-text text-transparent;
+	}
+
+	.tabPanel {
+		@apply w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3;
+	}
+
+	.product-card{
+		@apply relative flex select-none flex-col space-y-3 rounded-xl bg-primary-l p-8 md:p-10
+	}
+
+	.product-cart-icon{
+		@apply absolute bottom-5 right-5 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-primary-gradient transition hover:opacity-75
+	}
+
+	.footer {
+		@apply max-w-screen-2xl m-auto px-[15px] sm:px-[10%] py-6 bg-primary-d;
+	}
+}
